@@ -15,3 +15,12 @@ class Job(models.Model):
     salary_range_end = models.PositiveIntegerField()
     source = models.TextField()
     date_posted = models.DateField()
+
+class Todo_Item_Item(models.Model):
+    status = models.BooleanField()
+    name = models.CharField()
+
+class JobStatus(models.Model):
+    status = models.BooleanField()
+    notes = models.TextField()
+    todo_list = models.ManyToManyField(Todo_Item)
