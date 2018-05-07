@@ -9,7 +9,7 @@ class CompanySerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
         model = Company
-        fields = ('name', 'industry', 'address', 'url', 'glassdoor_link',)
+        fields = ('name', 'industry', 'address', 'url', 'glassdoor_link', 'jobs',)
 
 class JobSerializer(serializers.HyperlinkedModelSerializer):
     company = serializers.HyperlinkedRelatedField(
