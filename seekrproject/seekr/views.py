@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics
-from .serializers import JobSerializer, CompanySerializer, ToDoItemSerializer
-from .models import Job, Company, ToDoItem
+from .serializers import JobSerializer, CompanySerializer, TodoItemSerializer
+from .models import Job, Company, TodoItem
 
 class JobList(generics.ListCreateAPIView):
     queryset = Job.objects.all()
@@ -11,9 +11,9 @@ class JobDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Job.objects.all()
     serializer_class = JobSerializer
 
-class ToDoItemDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = ToDoItem.objects.all()
-    serializer_class = ToDoItemSerializer
+class TodoItemDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = TodoItem.objects.all()
+    serializer_class = TodoItemSerializer
 
 class CompanyList(generics.ListCreateAPIView):
     queryset = Company.objects.all()
