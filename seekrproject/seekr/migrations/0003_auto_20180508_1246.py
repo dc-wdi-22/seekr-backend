@@ -21,21 +21,27 @@ def seed(apps, schema_editor):
     todo3.save()
     todo4.save()
 
-    job1 = Job(company = apple, title='Technical Specialist', description='You help new owners get started and current ones get quick, efficient support — developing strong, positive relationships with Apple. ', requirements='Ability to assess customers\’ support needs when they arrive, then provide solutions or refer them to other team members. ', salary_range_start=36000, salary_range_end=50000, source='glassdoor', notes='yes', date_posted='Feb. 12, 2018', todo_list = todo1, job_status='Applied')
-    job2 = Job(company = apple, title='Solution Engineer', description='You\'re part of a team that helps customers introduce Apple technology within their businesses. ', requirements='Extensive experience in mixed-technology environments, including enterprise-level infrastructure. ', salary_range_start=121000, salary_range_end=181000, source='glassdoor', notes='mhm', date_posted='Feb. 12, 2018', todo_list = todo2, job_status='First Contact')
+    job1 = Job(company = apple, title='Technical Specialist', description='You help new owners get started and current ones get quick, efficient support — developing strong, positive relationships with Apple. ', requirements='Ability to assess customers\’ support needs when they arrive, then provide solutions or refer them to other team members. ', salary_range_start=36000, salary_range_end=50000, source='glassdoor', notes='yes', date_posted='2018-02-12', job_status='Applied')
+    job2 = Job(company = apple, title='Solution Engineer', description='You\'re part of a team that helps customers introduce Apple technology within their businesses. ', requirements='Extensive experience in mixed-technology environments, including enterprise-level infrastructure. ', salary_range_start=121000, salary_range_end=181000, source='glassdoor', notes='mhm', date_posted='2018-02-12', job_status='First Contact')
     
-    job3 = Job(company = microsoft, title='Executive Assistant to the Corporate Vice President', description='You will work with a dynamic and diverse group of people responsible for the company\’s government affairs outreach in Washington, DC. ', requirements='Solid project-management and problem-solving skills. ', salary_range_start=56000, salary_range_end=100000, source='', notes='HOT', date_posted='Feb. 12, 2018', todo_list = todo3, job_status='Interview')
-    job4 = Job(company = microsoft, title='Solution Sales Manager- Intelligent Cloud (SLG)', description='Senior leader within our enterprise sales organization. ', requirements='Strong experience in leadership and executing on Technology visions preferred', salary_range_start=99000, salary_range_end=180000, source='glassdoor', notes='master\'s degree preferred', date_posted='Feb. 12, 2018', todo_list = todo4, job_status='Offer')
+    job3 = Job(company = microsoft, title='Executive Assistant to the Corporate Vice President', description='You will work with a dynamic and diverse group of people responsible for the company\’s government affairs outreach in Washington, DC. ', requirements='Solid project-management and problem-solving skills. ', salary_range_start=56000, salary_range_end=100000, source='', notes='HOT', date_posted='2018-02-12', job_status='Interview')
+    job4 = Job(company = microsoft, title='Solution Sales Manager- Intelligent Cloud (SLG)', description='Senior leader within our enterprise sales organization. ', requirements='Strong experience in leadership and executing on Technology visions preferred', salary_range_start=99000, salary_range_end=180000, source='glassdoor', notes='master\'s degree preferred', date_posted='2018-02-12', job_status='Offer')
+    
+    job1.save()
+    job2.save()
+    job3.save()
+    job4.save()
+    
+    job1.todo_list.add(todo1)
+    job2.todo_list.add(todo2)
+    job3.todo_list.add(todo3)
+    job4.todo_list.add(todo4)
     
     job1.save()
     job2.save()
     job3.save()
     job4.save()
 
-    # job1.todo_list.add(todo1)
-    # job2.todo_list.add(todo2)
-    # job3.todo_list.add(todo3)
-    # job4.todo_list.add(todo4)
 
 class Migration(migrations.Migration):
 
