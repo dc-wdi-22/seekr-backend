@@ -21,14 +21,14 @@ class TodoItem(models.Model):
 
     
 class Job(models.Model):
-    title = models.CharField(max_length=100, blank=True)
-    description = models.CharField(max_length=1000, blank=True, null=True)
-    requirements = models.TextField(blank=True, null=True)
-    salary_range_start = models.PositiveIntegerField(null=True)
-    salary_range_end = models.PositiveIntegerField(null=True)
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    requirements = models.TextField()
+    salary_range_start = models.PositiveIntegerField(null=True, blank=True)
+    salary_range_end = models.PositiveIntegerField(null=True, blank=True)
     source = models.CharField(max_length=100, null=True)
     notes = models.TextField(blank=True, null=True)
-    date_posted = models.DateField(null=True)
+    date_posted = models.DateField(null=True, blank=True)
     todo_list = models.ManyToManyField(TodoItem)
     job_status = models.CharField(
         max_length = 100,
@@ -38,9 +38,7 @@ class Job(models.Model):
             ('Interview', 'Interview',),
             ('Offer', 'Offer',),
             ('Rejected', 'Rejected',),
-
         ),
-        unique = True,
         blank=True,
         null=True
     )
