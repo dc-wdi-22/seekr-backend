@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath seekr_project seekr_project.wsgi
+web: gunicorn --pythonpath seekrproject seekrproject.wsgi
