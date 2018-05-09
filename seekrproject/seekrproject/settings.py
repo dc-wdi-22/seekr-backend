@@ -80,13 +80,23 @@ WSGI_APPLICATION = 'seekrproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'd9pnfkqp8lgamu',
+#         'USER': 'omxhtuojkvapot',
+#         'PASSWORD': '35bc98169d112806742dabf057d63b5451c9ab88721d2e2c5c096cc141e0bfbb',
+#         'HOST': 'ec2-50-19-232-205.compute-1.amazonaws.com'
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd9pnfkqp8lgamu',
-        'USER': 'omxhtuojkvapot',
-        'PASSWORD': '35bc98169d112806742dabf057d63b5451c9ab88721d2e2c5c096cc141e0bfbb',
-        'HOST': 'ec2-50-19-232-205.compute-1.amazonaws.com'
+        'NAME': 'seekr',
+        'USER': 'seekruser',
+        'PASSWORD': 'seekr1',
+        'HOST': 'localhost'
     }
 }
 
