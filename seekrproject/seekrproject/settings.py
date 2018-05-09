@@ -26,8 +26,8 @@ SECRET_KEY = '19c8$()w^4%o0q!aameb&k_r2w69vbkjt2jutj=6!ofrbm3e-r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [‘0.0.0.0’, ‘localhost’,'https://demo-seekr.herokuapp.com']
 
 # Application definition
 
@@ -90,8 +90,10 @@ DATABASES = {
     }
 }
 
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+DATABASES['default'] = dj_database_url.config(default='postgres://omxhtuojkvapot:35bc98169d112806742dabf057d63b5451c9ab88721d2e2c5c096cc141e0bfbb@ec2-50-19-232-205.compute-1.amazonaws.com:5432/d9pnfkqp8lgamu')
 db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
+# DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
