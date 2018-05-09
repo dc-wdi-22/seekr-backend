@@ -26,8 +26,8 @@ SECRET_KEY = '19c8$()w^4%o0q!aameb&k_r2w69vbkjt2jutj=6!ofrbm3e-r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost','https://demo-seekr.herokuapp.com']
+ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['0.0.0.0', 'localhost','https://demo-seekr.herokuapp.com']
 
 # Application definition
 
