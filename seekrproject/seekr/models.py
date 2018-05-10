@@ -29,7 +29,7 @@ class Job(models.Model):
     source = models.CharField(max_length=100, null=True)
     notes = models.TextField(blank=True, null=True)
     date_posted = models.DateField(null=True, blank=True)
-    todo_list = models.ManyToManyField(TodoItem)
+    todo_list = models.ManyToManyField(TodoItem, blank=True, null=True)
     job_status = models.CharField(
         max_length = 100,
         choices = (
@@ -42,7 +42,7 @@ class Job(models.Model):
         blank=True,
         null=True
     )
-    company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='jobs')
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='jobs', blank=True, null=True)
     def __str__(self):
         return self.title
 

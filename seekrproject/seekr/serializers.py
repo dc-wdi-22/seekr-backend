@@ -21,7 +21,7 @@ class TodoItemSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('pk', 'status', 'name', 'job')
 
 class JobSerializer(serializers.ModelSerializer):
-    company = CompanySerializer(read_only=True)
+    company = serializers.PrimaryKeyRelatedField(queryset=Company.objects.all())
     todo_list = TodoItemSerializer(many=True, read_only=True)
     class Meta:
         model = Job
