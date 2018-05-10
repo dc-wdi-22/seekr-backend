@@ -29,7 +29,7 @@ class Job(models.Model):
     source = models.CharField(max_length=100, null=True)
     notes = models.TextField(blank=True, null=True)
     date_posted = models.DateField(null=True, blank=True)
-    todo_list = models.ManyToManyField(TodoItem, blank=True, null=True)
+    todo_list = models.ManyToManyField(TodoItem)
     job_status = models.CharField(
         max_length = 100,
         choices = (
