@@ -42,7 +42,7 @@ class Job(models.Model):
         blank=True,
         null=True
     )
-    company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='jobs')
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='jobs', null=True)
     def __str__(self):
         return self.title
 
