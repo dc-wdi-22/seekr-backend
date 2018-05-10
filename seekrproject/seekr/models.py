@@ -9,16 +9,6 @@ class Company(models.Model):
 
     def __str__(self):
         return self.name
-
-
-class TodoItem(models.Model):
-    status = models.NullBooleanField()
-    name = models.CharField(max_length=100, blank=True, null=True)
-
-    def __str__(self):
-        return self.name
-
-
     
 class Job(models.Model):
     title = models.CharField(max_length=100)
@@ -29,7 +19,7 @@ class Job(models.Model):
     source = models.CharField(max_length=100, null=True)
     notes = models.TextField(blank=True, null=True)
     date_posted = models.DateField(null=True, blank=True)
-    todo_list = models.ManyToManyField(TodoItem, blank=True, null=True)
+    # todo_list = models.ManyToManyField(TodoItem, blank=True, null=True)
     job_status = models.CharField(
         max_length = 100,
         choices = (
@@ -46,3 +36,10 @@ class Job(models.Model):
     def __str__(self):
         return self.title
 
+class TodoItem(models.Model):
+    status = models.NullBooleanField()
+    name = models.CharField(max_length=100, blank=True, null=True)
+    job = models.ForeignKey(Job, on_delete=models.CASCADE, related_name='todos', blank=True, null=True)
+
+    def __str__(self):
+        return self.name
