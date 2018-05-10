@@ -15,6 +15,10 @@ class TodoItemDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = TodoItem.objects.all()
     serializer_class = TodoItemSerializer
 
+class TodoList(generics.ListCreateAPIView):
+    queryset = TodoItem.objects.all()
+    serializer_class = TodoItemSerializer
+
 class CompanyList(generics.ListCreateAPIView):
     queryset = Company.objects.all()
     serializer_class = CompanySerializer
